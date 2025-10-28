@@ -1,0 +1,33 @@
+/* Custom styles for the accordion */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hide the default marker/arrow */
+summary {
+    list-style: none;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Custom marker using a pseudo-element */
+summary:before {
+    content: '+';
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-right: 1rem;
+    transition: transform 0.2s ease-in-out;
+    color: #6b7280; /* gray-500 */
+}
+
+details[open] > summary:before {
+    transform: rotate(45deg);
+}
+
+/* Smooth transition for opening/closing */
+details {
+   transition: max-height 0.3s ease-in-out;
+}
